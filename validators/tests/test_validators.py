@@ -94,6 +94,8 @@ class TestValidators(unittest.TestCase):
         with self.assertRaises(KeyError):
             should_validate_output_dict({'key5': 1, 'key2': [], 'key3': 'str'})
 
+        with self.assertRaises(AssertionError):
+            should_validate_output_dict('str')
 
 
 if __name__ == "__main__":
