@@ -1,4 +1,3 @@
-import sys
 import os
 import hashlib
 from collections import defaultdict
@@ -50,7 +49,7 @@ def find_duplicates(dir_path):
                 print(f"Error on file: {file_path}, {e}")
                 continue
 
-    for size, files in size2file.items():
+    for files in size2file.values():
         if len(files) < 2:
             continue
 
@@ -78,12 +77,4 @@ def find_duplicates(dir_path):
                 except OSError as e:
                     print(f"Error on file: {file_path}, {e}")
                     continue
-
-
-
-if __name__ == "__main__":
-    if len(sys.argv) > 1:
-        dir_path = sys.argv[1]
-
-    find_duplicates(dir_path)
 
